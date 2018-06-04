@@ -6,22 +6,22 @@
 /*   By: mwestvig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 15:42:21 by mwestvig          #+#    #+#             */
-/*   Updated: 2018/06/04 16:21:57 by mwestvig         ###   ########.fr       */
+/*   Updated: 2018/06/04 16:41:15 by mwestvig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static int	gnl(char buff[BUFF_SIZE + 1], char **line, int *buff_count, const int fd)
+static int	gnl(char buff[BUFF_SIZE + 1], char **line, int *count, const int fd)
 {
 	int j;
 	int i;
 
 	i = -1;
-	while (*buff_count > 0)
+	while (*count > 0)
 	{
 		j = 0;
-		while (j < *buff_count)
+		while (j < *count)
 		{
 			(*line)[++i] = buff[j++];
 			if ((*line)[i] == '\n' && ((*line)[i] = 0) == 0)
@@ -30,8 +30,8 @@ static int	gnl(char buff[BUFF_SIZE + 1], char **line, int *buff_count, const int
 				return (1);
 			}
 		}
-		*buff_count = read(fd, &buff[0], BUFF_SIZE);
-		buff[*buff_count] = '\0';
+		*count = read(fd, &buff[0], BUFF_SIZE);
+		buff[*count] = '\0';
 	}
 	if (i >= 0)
 		return (1);
@@ -39,7 +39,7 @@ static int	gnl(char buff[BUFF_SIZE + 1], char **line, int *buff_count, const int
 		return (0);
 }
 
-int		get_next_line(const int fd, char **line)
+int			get_next_line(const int fd, char **line)
 {
 	static char		buff[1000][BUFF_SIZE + 1];
 	int				buff_count;
