@@ -6,13 +6,13 @@
 #    By: mwestvig <m.westvig@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/23 16:06:00 by mwestvig          #+#    #+#              #
-#    Updated: 2018/06/04 16:51:39 by mwestvig         ###   ########.fr        #
+#    Updated: 2018/09/05 15:47:00 by mwestvig         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CFLAGS = -Wall -Werror -Wextra -I includes
+CFLAGS = -Wall -Werror -Wextra -g -I includes
 
 SRCS = ft_memset.c \
 	   ft_bzero.c \
@@ -73,6 +73,8 @@ SRCS = ft_memset.c \
 	   ft_lstiter.c \
 	   ft_lstmap.c \
 	   ft_countwords.c \
+	   get_next_line.c \
+	   ft_longatoi.c \
 
 OBJ = $(SRCS:.c=.o)
 

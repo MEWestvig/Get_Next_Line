@@ -6,7 +6,7 @@
 /*   By: mwestvig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/28 15:42:40 by mwestvig          #+#    #+#             */
-/*   Updated: 2018/06/04 16:55:45 by mwestvig         ###   ########.fr       */
+/*   Updated: 2018/09/19 13:02:11 by mwestvig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define BUFF_SIZE 32
 
-# include "libft.h"
+# include "../libft/includes/libft.h"
 
 int	get_next_line(const int fd, char **line);
 

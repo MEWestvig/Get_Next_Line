@@ -6,7 +6,7 @@
 /*   By: mwestvig <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/17 14:20:51 by mwestvig          #+#    #+#             */
-/*   Updated: 2018/05/25 10:06:09 by mwestvig         ###   ########.fr       */
+/*   Updated: 2018/08/21 15:33:00 by mwestvig         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 # ifndef IS_SPACE
 #  define IS_SPACE(x) (x <= 32)
 # endif
+
+# define MAXINT 2147483647
+
+# define BUFF_SIZE 32
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -88,5 +93,7 @@ void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int				ft_countwords(char const *str, char c);
+int				get_next_line(const int fd, char **line);
+long int		ft_longatoi(const char *str);
 
 #endif
